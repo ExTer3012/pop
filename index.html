@@ -2,10 +2,69 @@
 <html lang="fr">
 <head>
     <meta charset="UTF-8">
-    <meta http-equiv="refresh" content="0; url=php/acceuil.php">
-    <title>Redirection</title>
+    <title>Collection Pop Demon Slayer</title>
+    <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
-    <p>Si vous n'êtes pas redirigé automatiquement, <a href="php/acceuil.php">cliquez ici</a>.</p>
+    <h1 class="main-title">Collection Pop</h1>
+    <div class="filters">
+        <a href="#" class="active" data-filter="all">Toutes</a>
+        <a href="#" data-filter="owned">Possédées</a>
+        <a href="#" data-filter="unowned">Non Possédées</a>
+    </div>
+
+    <div class="pop-grid" id="popGrid">
+        <!-- Les cartes Pop seront chargées ici via JavaScript -->
+    </div>
+
+    <script>
+        fetch('data/pops.json')
+            .then(response => response.json())
+            .then(data => {
+                const popGrid = document.getElementById('popGrid');
+                const filters = document.querySelectorAll('.filters a');
+                let currentFilter = 'unowned';
+
+                function displayPops(filter) {
+                    popGrid.innerHTML = '';
+                    data.pops.forEach(pop => {
+                        if (filter === 'all' || 
+                            (filter === 'owned' && pop.owned) ||
+                            (filter === 'unowned' && !pop.owned)) {
+                            
+                            const card = document.createElement('div');
+                            card.className = 'pop-card';
+                            card.innerHTML = `
+                                <div class="pop-image">
+                                    <img src="images/${pop.image}" alt="${pop.name}">
+                                    ${pop.sticker ? '<div class="sticker">Sticker</div>' : ''}
+                                </div>
+                                <div class="pop-info">
+                                    <h3>${pop.name}</h3>
+                                    <p class="price">${pop.price.toFixed(2)} €</p>
+                                    ${pop.description ? `<p class="description">${pop.description}</p>` : ''}
+                                    <div class="status ${pop.owned ? 'owned' : 'not-owned'}">
+                                        ${pop.owned ? 'Possédée' : 'Non possédée'}
+                                    </div>
+                                </div>
+                            `;
+                            popGrid.appendChild(card);
+                        }
+                    });
+                }
+
+                filters.forEach(filter => {
+                    filter.addEventListener('click', (e) => {
+                        e.preventDefault();
+                        filters.forEach(f => f.classList.remove('active'));
+                        filter.classList.add('active');
+                        currentFilter = filter.dataset.filter;
+                        displayPops(currentFilter);
+                    });
+                });
+
+                displayPops(currentFilter);
+            });
+    </script>
 </body>
 </html>

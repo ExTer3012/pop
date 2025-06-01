@@ -2,11 +2,11 @@
   "pops": [
     {
       "id": 1,
-      "name": "Example Pop",
-      "image": "pop1.jpg",
-      "price": 14.99,
-      "sticker": true,
-      "description": "Description de la Pop",
+      "name": "Muichiro Tokito (Chase)",
+      "image": "demon-slayer-1853-muichiro-tokito-chase.webp",
+      "price": 74.90,
+      "sticker": "chase",
+      "description": "Muichiro Tokito, the Mist Hashira from Demon Slayer, is known for his exceptional swordsmanship and mastery of the Mist Breathing techniques. This Chase variant captures his unique appearance with a special glow-in-the-dark feature.",
       "owned": false
     }
   ]

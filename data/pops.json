@@ -19,6 +19,16 @@
       "sticker": "",
       "description": "Tanjiro Kamado, the main protagonist of Demon Slayer, is known for his unwavering determination and exceptional swordsmanship. This normal variant captures his unique appearance without the glow-in-the-dark feature.",
       "owned": false
+    },
+    {
+      "id": 3,
+      "number": "1854",
+      "name": "Tanjiro Kamado (hot topic exclusive)",
+      "image": "demon-slayer-tanjiro-kamado-avec-masque.webp",
+      "price": 14.63,
+      "sticker": "hot-topic-exclusive",
+      "description": "This Hot Topic exclusive features Tanjiro Kamado wearing his signature mask, showcasing his dedication and warrior spirit. A must-have for any Demon Slayer fan.",
+      "owned": false
     }
   ]
 }

@@ -1,0 +1,151 @@
+body {
+    background: url('../images/demon-slayer-bg.jpg') fixed;
+    background-size: cover;
+    color: #fff;
+    font-family: 'Arial', sans-serif;
+    margin: 0;
+    padding: 20px;
+    min-height: 100vh;
+    background-color: #1a1a1a;
+}
+
+.filters {
+    margin: 20px 0;
+    text-align: center;
+    background: rgba(0, 0, 0, 0.7);
+    padding: 15px;
+    border-radius: 8px;
+    border: 2px solid #ff4757;
+}
+
+.filters a {
+    padding: 10px 25px;
+    margin: 0 10px;
+    text-decoration: none;
+    color: #fff;
+    border: 2px solid #ff4757;
+    border-radius: 5px;
+    transition: all 0.3s;
+    background: rgba(255, 71, 87, 0.1);
+    position: relative;
+    overflow: hidden;
+}
+
+.filters a:hover {
+    background: rgba(255, 71, 87, 0.3);
+    transform: scale(1.05);
+}
+
+.filters a.active {
+    background: #ff4757;
+    color: white;
+    box-shadow: 0 0 15px rgba(255, 71, 87, 0.5);
+}
+
+.pop-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    gap: 30px;
+    padding: 20px;
+}
+
+.pop-card {
+    border: 2px solid #ff4757;
+    border-radius: 12px;
+    overflow: hidden;
+    background: rgba(0, 0, 0, 0.8);
+    box-shadow: 0 5px 15px rgba(255, 71, 87, 0.3);
+    transition: transform 0.3s, box-shadow 0.3s;
+    position: relative;
+}
+
+.pop-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 20px rgba(255, 71, 87, 0.5);
+}
+
+.pop-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 3px;
+    background: linear-gradient(90deg, #ff4757, #ff6b81, #ff4757);
+    animation: borderFlow 2s linear infinite;
+}
+
+@keyframes borderFlow {
+    0% { background-position: 0% 0; }
+    100% { background-position: 100% 0; }
+}
+
+.pop-image {
+    position: relative;
+    padding-top: 100%;
+    border-bottom: 2px solid #ff4757;
+}
+
+.pop-image img {
+    position: absolute;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.sticker {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    background: linear-gradient(45deg, #ffd700, #ffa502);
+    padding: 8px 15px;
+    border-radius: 5px;
+    color: #000;
+    font-weight: bold;
+    box-shadow: 0 0 10px rgba(255, 215, 0, 0.5);
+}
+
+.pop-info {
+    padding: 20px;
+}
+
+.pop-info h3 {
+    color: #ff4757;
+    margin: 0 0 15px 0;
+    font-size: 1.3em;
+    text-shadow: 0 0 5px rgba(255, 71, 87, 0.3);
+}
+
+.price {
+    font-weight: bold;
+    color: #ff6b81;
+    font-size: 1.2em;
+    margin: 10px 0;
+}
+
+.description {
+    color: #ddd;
+    margin: 15px 0;
+    line-height: 1.4;
+}
+
+.status {
+    padding: 8px 15px;
+    border-radius: 5px;
+    text-align: center;
+    font-weight: bold;
+    margin-top: 15px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.owned {
+    background: linear-gradient(45deg, #2ed573, #7bed9f);
+    color: #000;
+}
+
+.not-owned {
+    background: linear-gradient(45deg, #ff4757, #ff6b81);
+    color: #fff;
+}

@@ -1,0 +1,13 @@
+{
+  "pops": [
+    {
+      "id": 1,
+      "name": "Example Pop",
+      "image": "pop1.jpg",
+      "price": 14.99,
+      "sticker": true,
+      "description": "Description de la Pop",
+      "owned": false
+    }
+  ]
+}

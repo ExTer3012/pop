@@ -42,12 +42,47 @@
                                 <div class="pop-info">
                                     <h3>${pop.name}</h3>
                                     <p class="price">${pop.price.toFixed(2)} €</p>
-                                    ${pop.description ? `<p class="description">${pop.description}</p>` : ''}
                                     <div class="status ${pop.owned ? 'owned' : 'not-owned'}">
                                         ${pop.owned ? 'Possédée' : 'Non possédée'}
                                     </div>
                                 </div>
                             `;
+                            
+                            // Ajouter l'événement click pour ouvrir le modal
+                            card.addEventListener('click', () => {
+                                const modal = document.createElement('div');
+                                modal.className = 'modal';
+                                modal.innerHTML = `
+                                    <div class="modal-content">
+                                        <span class="close-modal">&times;</span>
+                                        <h2>${pop.name}</h2>
+                                        <div class="modal-info">
+                                            <p class="price">Prix : ${pop.price.toFixed(2)} €</p>
+                                            ${pop.description ? `<p class="description">${pop.description}</p>` : ''}
+                                            <div class="status ${pop.owned ? 'owned' : 'not-owned'}">
+                                                ${pop.owned ? 'Possédée' : 'Non possédée'}
+                                            </div>
+                                        </div>
+                                    </div>
+                                `;
+                                
+                                document.body.appendChild(modal);
+                                setTimeout(() => modal.style.display = 'block', 0);
+                                
+                                modal.querySelector('.close-modal').addEventListener('click', (e) => {
+                                    e.stopPropagation();
+                                    modal.style.display = 'none';
+                                    setTimeout(() => modal.remove(), 300);
+                                });
+                                
+                                modal.addEventListener('click', (e) => {
+                                    if (e.target === modal) {
+                                        modal.style.display = 'none';
+                                        setTimeout(() => modal.remove(), 300);
+                                    }
+                                });
+                            });
+                            
                             popGrid.appendChild(card);
                         }
                     });

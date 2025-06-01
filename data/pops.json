@@ -9,6 +9,26 @@
       "sticker": "chase",
       "description": "Muichiro Tokito, the Mist Hashira from Demon Slayer, is known for his exceptional swordsmanship and mastery of the Mist Breathing techniques. This Chase variant captures his unique appearance with a special glow-in-the-dark feature.",
       "owned": false
+    },
+    {
+      "id": 1,
+      "number": "1853",
+      "name": "Muichiro Tokito (Chase)",
+      "image": "demon-slayer-1853-muichiro-tokito-chase.webp",
+      "price": 74.90,
+      "sticker": "chase",
+      "description": "Muichiro Tokito, the Mist Hashira from Demon Slayer, is known for his exceptional swordsmanship and mastery of the Mist Breathing techniques. This Chase variant captures his unique appearance with a special glow-in-the-dark feature.",
+      "owned": false
+    },
+    {
+      "id": 2,
+      "number": "867",
+      "name": "tanjiro Kamado",
+      "image": "demon-slayer-867-tanjiro-kamado.webp",
+      "price": 7.99,
+      "sticker": "hot-topic-exclusive",
+      "description": "Tanjiro Kamado, the main protagonist of Demon Slayer, is known for his unwavering determination and exceptional swordsmanship. This normal variant captures his unique appearance without the glow-in-the-dark feature.",
+      "owned": false
     }
   ]
 }

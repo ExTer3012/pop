@@ -36,8 +36,8 @@
                             card.className = 'pop-card';
                             card.innerHTML = `
                                 <div class="pop-image">
-                                    <img src="images/${pop.image}" alt="${pop.name}">
-                                    ${pop.sticker ? '<div class="sticker">Sticker</div>' : ''}
+                                    <img src="images/pops/${pop.image}" alt="${pop.name}">
+                                    ${pop.sticker ? `<div class="sticker-container"><img class="sticker-image" src="images/stickers/${pop.sticker}.png" alt="Sticker ${pop.sticker}"></div>` : ''}
                                 </div>
                                 <div class="pop-info">
                                     <h3>${pop.name}</h3>
